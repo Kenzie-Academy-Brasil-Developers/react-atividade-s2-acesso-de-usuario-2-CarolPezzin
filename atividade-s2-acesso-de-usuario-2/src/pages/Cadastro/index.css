@@ -1,0 +1,154 @@
+.Container{
+    background-color: #000000;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+label{
+    width: 84%;
+    padding: 1%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.182px;
+    line-height: 0px;
+    color: #F8F9FA;
+}
+
+input{
+    background: #343B41;
+    border: 1.2182px solid #343B41;
+    border-radius: 4px;
+    width: 15.5rem;
+    height: 1rem;
+    margin-bottom: 3%;
+    margin-top: 6%;
+    padding: 1rem;
+}
+input::placeholder{
+    font-weight: 400;
+    font-size: 16.2426px;
+    line-height: 26px;
+    color: #868E96;
+    
+}
+
+select{
+    background: #343B41;
+    border: 1.2182px solid #343B41;
+    border-radius: 4px;
+    width: 18rem;
+    height: 3rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    color: #868E96;
+    font-weight: 400;
+    font-size: 16.2426px;
+    line-height: 26px;
+    color: #868E96;
+}
+
+
+.Container-menu{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    width: 21rem;
+    
+}
+
+.Container-Btn{
+    background: #212529;
+    border-radius: 4px;
+    width: 24%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 28px;
+    text-align: center;
+    color: #F8F9FA;
+    cursor: pointer;
+}
+
+.Form-titulo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+.Form-titulo h3{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    color: #F8F9FA;
+    margin-top: 10%;
+    margin-bottom: 3%;
+}
+.Form-titulo p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;color: #868E96;
+    margin-top: 0%;
+}
+
+.Form{
+    width: 21rem;
+    background: #212529;
+    box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.Form-btn-cadastrar{
+    width: 88%;
+    height: 2.5rem;
+    background: #59323F;
+    border: 1.2182px solid #59323F;
+    border-radius: 4px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+@media (max-width: 440px){
+    .Container{
+        padding: 5%;
+    }
+    .Container-menu{
+        width: 88%;
+    }
+    .Form{
+        width: 90%;
+    }
+    input{
+        width: 88%;
+    }
+    select{
+        width: 100%;
+    
+    }
+}
