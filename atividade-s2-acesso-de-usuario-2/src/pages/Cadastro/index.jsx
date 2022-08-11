@@ -5,11 +5,12 @@ import {useForm} from "react-hook-form"
 import * as yup from "yup"
 import { yupResolver } from '@hookform/resolvers/yup'
 import api from '../../services/api'
+import { useNavigate } from 'react-router-dom'
 
 
 export function Cadastro() {
 
-    
+
     const formSchema = yup.object().shape({
         name: yup.string().required("Nome obrigatório"),
         email: yup.string().required("Email obrigatório"),
@@ -19,6 +20,7 @@ export function Cadastro() {
         course_module: yup.string().required("Obrigatório informar o módulo")
     })
 
+    const navigate = useNavigate()
 
     const {register, 
         handleSubmit,
@@ -28,16 +30,20 @@ export function Cadastro() {
       })
   
       async function regist(data) {
-        const response = await api.post('/users', data)
         
+        const response = await api.post('/users', data)
+        navigate('/')
+      }
 
+      function backLogin(){
+        navigate('/')
       }
   
     return (
       <div className="Container">
         <div className='Container-menu'>
         <img src={logo} alt={logo}/>
-        <button className='Container-Btn'>Voltar</button>
+        <button className='Container-Btn' type='button' onClick={backLogin}>Voltar</button>
         </div>
         <form className="Form" onSubmit={handleSubmit(regist)}>
         <div className='Form-titulo'>

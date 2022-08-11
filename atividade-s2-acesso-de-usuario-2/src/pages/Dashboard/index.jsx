@@ -10,8 +10,6 @@ export const Dashboard = () => {
 
     const {user, loading} = useContext(AuthContext)
 
-    console.log('mostrando usuario', user)
-
     if(loading){
     return <div>Carregando...</div>
     }
@@ -19,8 +17,7 @@ export const Dashboard = () => {
     const navigate = useNavigate()
 
     function logout(){
-        user(null)
-        localStorage.removeItem('token')
+        localStorage.removeItem('@context-demo:token')
         navigate('/')
     }
     
@@ -28,7 +25,7 @@ export const Dashboard = () => {
     <div className="Container-dash">
     <header className="Dash-header">
         <img src={logo} alt='logo' />
-        <button onClick={() => logout} className='Dash-btn'>Sair</button>
+        <button type='button' onClick={logout} className='Dash-btn'>Sair</button>
     </header>
     <div className="Dash-info">
         <h3>Olá, {user.name}</h3>

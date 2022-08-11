@@ -6,10 +6,7 @@ import {useForm} from "react-hook-form"
 import {yupResolver} from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { AuthContext } from '../../contexts/AuthContext';
-import { Link, Router, useNavigate } from 'react-router-dom';
-
-
-
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function HomePag() {
   
@@ -29,9 +26,10 @@ function HomePag() {
 
   const {signIn} = useContext(AuthContext)
 
+  const navigate = useNavigate()
+  
   function goRegister(){
-    
-    
+      navigate('/cadastro')
   }
 
   return (
@@ -51,7 +49,7 @@ function HomePag() {
       </form>
       <div className='Container-login'>
           <p>Ainda não possui uma conta?</p>
-          <button type='button' onClick={() => goRegister} className='Btn-login-cadastro'>Cadastre-se</button>
+          <button type='button' onClick={goRegister} className='Btn-login-cadastro'>Cadastre-se</button>
       </div>
       
     </div>
