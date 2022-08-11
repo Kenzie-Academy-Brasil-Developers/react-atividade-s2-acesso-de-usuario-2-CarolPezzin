@@ -1,4 +1,4 @@
-.Container-dash{
+.Containerdash{
     width: 100vw;
     height: 100vh;
     background: #121214;
@@ -8,7 +8,7 @@
     flex-direction: column;
 }
 
-.Dash-header{
+.Dashheader{
     width: 100%;
     height: 4.5rem;
     display: flex;
@@ -17,7 +17,7 @@
     gap: 50%;
 }
 
-.Dash-btn{
+.Dashbtn{
     width: 3.468rem;
     background: #212529;
     border-radius: 4px;
@@ -32,7 +32,7 @@
     cursor: pointer;
 }
 
-.Dash-info{
+.Dashinfo{
     width: 100%;
     height: 7.357rem;
     margin-top: 0%;
@@ -43,7 +43,7 @@
     gap: 50%;
     
 }
-.Dash-info h3{
+.Dashinfo h3{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -51,7 +51,7 @@
     line-height: 28px;
     color: #F8F9FA;
 }
-.Dash-info p{
+.Dashinfo p{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -60,7 +60,7 @@
     color: #868E96;
 }
 
-.Dash-p{
+.Dashp{
     width: 61%;
     height: 30rem;
     display: flex;
@@ -69,7 +69,7 @@
     flex-direction: column;
     
 }
-.Dash-p-p{
+.Dashpp{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -77,7 +77,7 @@
     line-height: 28px;
     color: #F8F9FA;
 }
-.Dash-p-p-p{
+.Dashppp{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -87,13 +87,13 @@
 }
 
 @media (max-width: 440px){
-    .Dash-header{
+    .Dashheader{
         width: 50%;
     }
-    .Dash-info{
+    .Dashinfo{
         gap: 30%;
     }
-    .Dash-p{
+    .Dashp{
         width: 58%;
     }
 }

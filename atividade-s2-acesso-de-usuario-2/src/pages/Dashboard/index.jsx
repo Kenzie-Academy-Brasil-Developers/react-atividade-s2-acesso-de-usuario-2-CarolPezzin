@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import './index.css'
+import styles from './style.module.css'
 import logo from './Logo.png'
 
 import { useContext } from 'react'
@@ -22,18 +22,18 @@ export const Dashboard = () => {
     }
     
     return user ? 
-    <div className="Container-dash">
-    <header className="Dash-header">
+    <div className={styles.Containerdash}>
+    <header className={styles.Dashheader}>
         <img src={logo} alt='logo' />
-        <button type='button' onClick={logout} className='Dash-btn'>Sair</button>
+        <button type='button' onClick={logout} className={styles.Dashbtn}>Sair</button>
     </header>
-    <div className="Dash-info">
+    <div className={styles.Dashinfo}>
         <h3>Olá, {user.name}</h3>
         <p>{user.course_module}</p>
     </div>
-    <div className="Dash-p">
-        <p className='Dash-p-p'>Que pena! Estamos em desenvolvimento:(</p>
-        <p className='Dash-p-p-p'>Nossa aplicação está em desenvolvimento, em breve teremos novidades</p>
+    <div className={styles.Dashp}>
+        <p className={styles.Dashpp}>Que pena! Estamos em desenvolvimento:(</p>
+        <p className={styles.Dashppp}>Nossa aplicação está em desenvolvimento, em breve teremos novidades</p>
         </div>
     </div>
             :

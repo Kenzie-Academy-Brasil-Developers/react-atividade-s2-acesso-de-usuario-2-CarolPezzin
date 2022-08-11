@@ -1,4 +1,4 @@
-import './index.css';
+import styles from './style.module.css';
 import  logo  from './Logo.png'
 
 import { useContext } from 'react';
@@ -33,23 +33,23 @@ function HomePag() {
   }
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <img src={logo} alt="logo"/>
-      <form className="Form-login" onSubmit={handleSubmit(signIn)}>
+      <form className={styles.Formlogin} onSubmit={handleSubmit(signIn)}>
         <h3>Login</h3>
-        <label className='Label-login'>Email
-          <input className='Input-login' name="email" type="text" placeholder="Digite seu email" {...register("email")}></input>
+        <label className={styles.Labellogin}>Email
+          <input className={styles.Inputlogin} name="email" type="text" placeholder="Digite seu email" {...register("email")}></input>
           {errors.email?.message}
         </label>
-        <label className='Label-login'>Senha
-          <input className='Input-login' name="password" type="password" placeholder="Digite sua senha" {...register("password")}></input>
+        <label className={styles.Labellogin}>Senha
+          <input className={styles.Inputlogin} name="password" type="password" placeholder="Digite sua senha" {...register("password")}></input>
           {errors.password?.message}
         </label>
-        <button className='Btn-login' type="submit">Entrar</button>
+        <button className={styles.Btnlogin} type="submit">Entrar</button>
       </form>
-      <div className='Container-login'>
+      <div className={styles.Containerlogin}>
           <p>Ainda não possui uma conta?</p>
-          <button type='button' onClick={goRegister} className='Btn-login-cadastro'>Cadastre-se</button>
+          <button type='button' onClick={goRegister} className={styles.Btnlogincadastro}>Cadastre-se</button>
       </div>
       
     </div>

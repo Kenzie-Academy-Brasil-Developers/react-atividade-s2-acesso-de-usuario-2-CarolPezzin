@@ -12,7 +12,7 @@
     color: white;
   }
   
-  .Form-login{
+  .Formlogin{
     margin-top: 0%;
     margin-bottom: -10%;
     width: 21rem;
@@ -29,7 +29,7 @@
     color: white;
   }
   
-  .Label-login{
+  .Labellogin{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -44,7 +44,7 @@
     color: #F8F9FA;
   }
   
-  .Input-login{
+  .Inputlogin{
     background: #343B41;
     border: 1.2182px solid #343B41;
     border-radius: 4px;
@@ -54,14 +54,14 @@
     margin-top: 6%;
     padding: 1rem;
   }
-  .Input-login::placeholder{
+  .Inputlogin::placeholder{
     font-weight: 400;
     font-size: 16.2426px;
     line-height: 26px;
     color: #868E96;
     
   }
-  .Form-login h3{
+  .Formlogin h3{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -72,7 +72,7 @@
     margin-bottom: 0%;
   }
   
-  .Btn-login{
+  .Btnlogin{
     width: 18rem;
     height: 3rem;
     background: #FF577F;
@@ -87,7 +87,7 @@
     cursor: pointer;
   }
   
-  .Container-login p{
+  .Containerlogin p{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -98,7 +98,7 @@
     
   }
   
-  .Btn-login-cadastro{
+  .Btnlogincadastro{
     width: 18rem;
     height: 3rem;
     background: #868E96;
@@ -117,24 +117,24 @@
     .App{
       padding: 5%;
     }
-    .Form-login{
+    .Formlogin{
       width: 90%;
       
     }
-    .Label-login{
+    .Labellogin{
       width: 96%;
       margin-left: 10%;
     }
-    .Input-login{
+    .Inputlogin{
       width: 78%;
     }
-    .Btn-login{
+    .Btnlogin{
       width: 85%;
     }
-    .Container-login{
+    .Containerlogin{
       width: 90%;
     }
-    .Btn-login-cadastro{
+    .Btnlogincadastro{
       width: 100%;
     }
   }

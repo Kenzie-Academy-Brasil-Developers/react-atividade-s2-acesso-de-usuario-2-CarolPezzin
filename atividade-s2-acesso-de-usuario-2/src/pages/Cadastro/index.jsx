@@ -1,4 +1,4 @@
-import './index.css'
+import styles from'./style.module.css'
 import logo from "../../Logo.png"
 
 import {useForm} from "react-hook-form"
@@ -13,8 +13,12 @@ export function Cadastro() {
 
     const formSchema = yup.object().shape({
         name: yup.string().required("Nome obrigatório"),
-        email: yup.string().required("Email obrigatório"),
-        password: yup.string().required("Senha obrigatório"),
+        email: yup.string()
+        .required("Email obrigatório")
+        .matches(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/, "Email inválido"),
+        password: yup.string()
+        .required("Senha obrigatório")
+        .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])(?:([0-9a-zA-Z$*&@#])(?!\1)){8,}$/, 'Senha invalida'),
         contact: yup.string().required("Contato obrigatório"),
         confirme: yup.string().oneOf([yup.ref('password')]).required("Deve ser igual a senha"),
         course_module: yup.string().required("Obrigatório informar o módulo")
@@ -40,13 +44,13 @@ export function Cadastro() {
       }
   
     return (
-      <div className="Container">
-        <div className='Container-menu'>
+      <div className={styles.Container}>
+        <div className={styles.Containermenu}>
         <img src={logo} alt={logo}/>
-        <button className='Container-Btn' type='button' onClick={backLogin}>Voltar</button>
+        <button className={styles.ContainerBtn} type='button' onClick={backLogin}>Voltar</button>
         </div>
-        <form className="Form" onSubmit={handleSubmit(regist)}>
-        <div className='Form-titulo'>
+        <form className={styles.Form} onSubmit={handleSubmit(regist)}>
+        <div className={styles.Formtitulo}>
         <h3>Crie sua conta</h3>
         <p>Rapido e grátis, vamos nessa</p>
         </div>
@@ -81,7 +85,7 @@ export function Cadastro() {
             <option name="terceiromodulo" class="terceiromodulo" value="terceiro modulo">Terceiro módulo (Introdução ao Backend)</option>
             <option name="quartomodulo" class="quartomodulo" value="quarto modulo">Quarto módulo (Backend Avançado)</option>
           </select></label>
-          <button className='Form-btn-cadastrar' type="submit">Cadastrar</button>
+          <button className={styles.Formbtncadastrar} type="submit">Cadastrar</button>
           
         </form>
       </div>
