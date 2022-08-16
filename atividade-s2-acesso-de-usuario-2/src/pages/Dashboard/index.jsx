@@ -1,41 +1,48 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import styles from './style.module.css'
-import logo from './Logo.png'
+import { Containerdash } from "./style.module.js";
+import logo from "./Logo.png";
 
-import { useContext } from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
-import { AuthContext } from '../../contexts/AuthContext'
+import { Navigate, useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
+import { TechList } from "../../components/TechList/index.jsx";
+import ModalTech from "../../components/ModalTech/index.jsx";
+import { useState } from "react";
 
 export const Dashboard = () => {
+  const { user, loading } = useAuth();
+  const [modal, setModal] = useState(false)
 
-    const {user, loading} = useContext(AuthContext)
+  const navigate = useNavigate();
 
-    if(loading){
-    return <div>Carregando...</div>
-    }
+  function logout() {
+    localStorage.removeItem("@context-demo:token");
+    navigate("/");
+  }
 
-    const navigate = useNavigate()
-
-    function logout(){
-        localStorage.removeItem('@context-demo:token')
-        navigate('/')
-    }
-    
-    return user ? 
-    <div className={styles.Containerdash}>
-    <header className={styles.Dashheader}>
-        <img src={logo} alt='logo' />
-        <button type='button' onClick={logout} className={styles.Dashbtn}>Sair</button>
-    </header>
-    <div className={styles.Dashinfo}>
+  if (loading) {
+    return <div>Carregando...</div>;
+  }
+  return user ? (
+    <Containerdash>
+      <header>
+        <img src={logo} alt="logo" />
+        <button type="button" onClick={logout}>
+          Sair
+        </button>
+      </header>
+      <div>
         <h3>Olá, {user.name}</h3>
         <p>{user.course_module}</p>
-    </div>
-    <div className={styles.Dashp}>
-        <p className={styles.Dashpp}>Que pena! Estamos em desenvolvimento:(</p>
-        <p className={styles.Dashppp}>Nossa aplicação está em desenvolvimento, em breve teremos novidades</p>
-        </div>
-    </div>
-            :
-    <Navigate to='/' replace />
-}
+      </div>
+      <section>
+        <h2>Tecnologias</h2>
+        <button onClick={() => setModal(true)}>+</button>
+      </section>
+
+      <ModalTech modal={modal} setModal={setModal}/>
+      <TechList />
+    </Containerdash>
+  ) : (
+    <Navigate to="/" replace />
+  );
+};

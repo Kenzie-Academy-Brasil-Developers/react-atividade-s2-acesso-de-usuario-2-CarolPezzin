@@ -1,4 +1,4 @@
-import styles from './style.module.css';
+import { ContainerApp} from './style.js'
 import  logo  from './Logo.png'
 
 import { useContext } from 'react';
@@ -6,7 +6,7 @@ import {useForm} from "react-hook-form"
 import {yupResolver} from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { AuthContext } from '../../contexts/AuthContext';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function HomePag() {
   
@@ -33,26 +33,26 @@ function HomePag() {
   }
 
   return (
-    <div className={styles.App}>
+    <ContainerApp>
       <img src={logo} alt="logo"/>
-      <form className={styles.Formlogin} onSubmit={handleSubmit(signIn)}>
+      <form onSubmit={handleSubmit(signIn)}>
         <h3>Login</h3>
-        <label className={styles.Labellogin}>Email
-          <input className={styles.Inputlogin} name="email" type="text" placeholder="Digite seu email" {...register("email")}></input>
+        <label>Email
+          <input  name="email" type="text" placeholder="Digite seu email" {...register("email")}></input>
           {errors.email?.message}
         </label>
-        <label className={styles.Labellogin}>Senha
-          <input className={styles.Inputlogin} name="password" type="password" placeholder="Digite sua senha" {...register("password")}></input>
+        <label>Senha
+          <input  name="password" type="password" placeholder="Digite sua senha" {...register("password")}></input>
           {errors.password?.message}
         </label>
-        <button className={styles.Btnlogin} type="submit">Entrar</button>
+        <button type="submit">Entrar</button>
       </form>
-      <div className={styles.Containerlogin}>
+      <section>
           <p>Ainda não possui uma conta?</p>
-          <button type='button' onClick={goRegister} className={styles.Btnlogincadastro}>Cadastre-se</button>
-      </div>
+          <button type='button' onClick={goRegister}>Cadastre-se</button>
+      </section>
       
-    </div>
+    </ContainerApp>
     
   );
 }

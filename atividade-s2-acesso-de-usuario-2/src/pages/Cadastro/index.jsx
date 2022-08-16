@@ -1,4 +1,4 @@
-import styles from'./style.module.css'
+import { Container, Form} from './style.module.js'
 import logo from "../../Logo.png"
 
 import {useForm} from "react-hook-form"
@@ -44,13 +44,13 @@ export function Cadastro() {
       }
   
     return (
-      <div className={styles.Container}>
-        <div className={styles.Containermenu}>
+      <Container>
+        <div>
         <img src={logo} alt={logo}/>
-        <button className={styles.ContainerBtn} type='button' onClick={backLogin}>Voltar</button>
+        <button type='button' onClick={backLogin}>Voltar</button>
         </div>
-        <form className={styles.Form} onSubmit={handleSubmit(regist)}>
-        <div className={styles.Formtitulo}>
+        <Form onSubmit={handleSubmit(regist)}>
+        <div>
         <h3>Crie sua conta</h3>
         <p>Rapido e grátis, vamos nessa</p>
         </div>
@@ -85,9 +85,9 @@ export function Cadastro() {
             <option name="terceiromodulo" class="terceiromodulo" value="terceiro modulo">Terceiro módulo (Introdução ao Backend)</option>
             <option name="quartomodulo" class="quartomodulo" value="quarto modulo">Quarto módulo (Backend Avançado)</option>
           </select></label>
-          <button className={styles.Formbtncadastrar} type="submit">Cadastrar</button>
+          <button type="submit">Cadastrar</button>
           
-        </form>
-      </div>
+        </Form>
+      </Container>
     );
   }
