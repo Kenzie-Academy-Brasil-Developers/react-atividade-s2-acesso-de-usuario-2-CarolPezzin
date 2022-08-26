@@ -1,13 +1,9 @@
-import HomePag from '../pages/Home';
-import { Cadastro } from '../pages/Cadastro';
 import { Routes, Route } from 'react-router-dom'
+import { HomePag } from '../pages/Home';
+import { Cadastro } from '../pages/Cadastro';
 import { Dashboard } from '../pages/Dashboard';
 
-
-
-
 function RoutesMain() {
-  
   return (
     <Routes>
       <Route path='/' element={<HomePag/>} />        

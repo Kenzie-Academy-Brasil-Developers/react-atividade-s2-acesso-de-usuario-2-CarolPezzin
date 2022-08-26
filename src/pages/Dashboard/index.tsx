@@ -1,16 +1,16 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { Containerdash } from "./style.module.js";
-import logo from "./Logo.png";
-
+import { Containerdash } from "./style.module";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
-import { TechList } from "../../components/TechList/index.jsx";
-import ModalTech from "../../components/ModalTech/index.jsx";
+import { TechList } from "../../components/TechList/index";
+import ModalTech from "../../components/ModalTech/index";
 import { useState } from "react";
 
+const logo = require("./Logo.png" as string);
+       
 export const Dashboard = () => {
   const { user, loading } = useAuth();
-  const [modal, setModal] = useState(false)
+  const [modal, setModal] = useState(false);
 
   const navigate = useNavigate();
 
@@ -32,14 +32,14 @@ export const Dashboard = () => {
       </header>
       <div>
         <h3>Olá, {user.name}</h3>
-        <p>{user.course_module}</p>
+        <p>{user.coursemodule}</p>
       </div>
       <section>
         <h2>Tecnologias</h2>
         <button onClick={() => setModal(true)}>+</button>
       </section>
 
-      <ModalTech modal={modal} setModal={setModal}/>
+      <ModalTech modal={modal} setModal={setModal} />
       <TechList />
     </Containerdash>
   ) : (
